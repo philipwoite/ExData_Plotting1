@@ -1,6 +1,8 @@
 library(dplyr)
-#with(workingDataset, plot(Global_Active_Power, ))
 
-with(workingDataset, hist(Global_active_power))
+png(file="plot1.png",width=480,height=480)
 
-hist(workingDataset[,"Global_active_power"])
+
+hist(as.numeric(workingDataset[,"Global_active_power"]),  xlab = "Global Active Power (kilowatts)", ylab = "Frequency", main = "Global Active Power", col = "red")
+dev.off()
+
